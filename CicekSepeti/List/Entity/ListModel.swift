@@ -248,8 +248,8 @@ struct Price : Decodable {
     let currencyCode : String?
     let current : Float?
     let discountPercentage : JSONAny?
-    let old : Int?
-    let oldTotal : Int?
+    let old : Float?
+    let oldTotal : Float?
     let showCurrencyCode : Bool?
     let showDecimalPart : Bool?
     let showFirstPrice : Bool?
@@ -280,8 +280,8 @@ struct Price : Decodable {
         currencyCode = try values.decodeIfPresent(String.self, forKey: .currencyCode)
         current = try values.decodeIfPresent(Float.self, forKey: .current)
         discountPercentage = try values.decodeIfPresent(JSONAny.self, forKey: .discountPercentage)
-        old = try values.decodeIfPresent(Int.self, forKey: .old)
-        oldTotal = try values.decodeIfPresent(Int.self, forKey: .oldTotal)
+        old = try values.decodeIfPresent(Float.self, forKey: .old)
+        oldTotal = try values.decodeIfPresent(Float.self, forKey: .oldTotal)
         showCurrencyCode = try values.decodeIfPresent(Bool.self, forKey: .showCurrencyCode)
         showDecimalPart = try values.decodeIfPresent(Bool.self, forKey: .showDecimalPart)
         showFirstPrice = try values.decodeIfPresent(Bool.self, forKey: .showFirstPrice)
