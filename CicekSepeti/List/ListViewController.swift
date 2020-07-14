@@ -10,24 +10,33 @@ import UIKit
 
 class ListViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     weak var presenter: ViewToPresenterProtocol?
-    var listArray = [RootObject]()
+    var products = [Product]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         presenter?.startFetchingData()
-    
+        registerTableView()
     }
     
-
+    private func registerTableView() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(UINib(nibName: "ListCell", bundle: nil), forCellReuseIdentifier: "ListCell")
+    }
 }
 
 extension ListViewController:PresenterToViewProtocol{
     
     func showList(listArray: [RootObject]) {
         
-        self.listArray = listArray
+        for product in listArray {
+            self.products.append(contentsOf: (product.resultObject.data?.products)!)
+        }
+        self.tableView.reloadData()
     }
     
     func showError() {
@@ -38,4 +47,21 @@ extension ListViewController:PresenterToViewProtocol{
         }))
         self.present(alert, animated: true, completion: nil)
     }
+}
+
+extension ListViewController: UITableViewDelegate, UITableViewDataSource {
+ 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.products.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListCell
+        if !self.products.isEmpty {
+         cell.setData(data: self.products[indexPath.row])
+            cell.selectionStyle = .none
+        }
+        return cell
+    }
+    
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,12 @@
 		1E9C88CC24BD12A400647083 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9C88CB24BD12A400647083 /* Endpoints.swift */; };
 		1E9C88CE24BD12B000647083 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9C88CD24BD12B000647083 /* ListPresenter.swift */; };
 		1E9C88D024BD12BA00647083 /* ListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9C88CF24BD12BA00647083 /* ListWireframe.swift */; };
+		1EF1E90D24BE26E8007E7273 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1E90B24BE26E8007E7273 /* ListCell.swift */; };
+		1EF1E90E24BE26E8007E7273 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EF1E90C24BE26E8007E7273 /* ListCell.xib */; };
+		1EF1E91224BE2BF4007E7273 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1E91124BE2BF4007E7273 /* SplashViewController.swift */; };
+		9853C2E50644837EE9D99BE3 /* Pods_CicekSepeti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA40A15C6EE6D42AAB78345E /* Pods_CicekSepeti.framework */; };
+		BF13775C4262D68E7B9CD7FA /* Pods_CicekSepetiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E4A3AE2089BB42A42C04C3 /* Pods_CicekSepetiTests.framework */; };
+		DBDAF4592C91BAF30F98543A /* Pods_CicekSepetiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D9ACE84227BAE31AF19458E /* Pods_CicekSepetiUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +73,18 @@
 		1E9C88CB24BD12A400647083 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		1E9C88CD24BD12B000647083 /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		1E9C88CF24BD12BA00647083 /* ListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWireframe.swift; sourceTree = "<group>"; };
+		1EF1E90B24BE26E8007E7273 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		1EF1E90C24BE26E8007E7273 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		1EF1E91124BE2BF4007E7273 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		70C76A0C0C8981AE71FC50AE /* Pods-CicekSepetiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CicekSepetiTests.release.xcconfig"; path = "Target Support Files/Pods-CicekSepetiTests/Pods-CicekSepetiTests.release.xcconfig"; sourceTree = "<group>"; };
+		8D9ACE84227BAE31AF19458E /* Pods_CicekSepetiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CicekSepetiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA40A15C6EE6D42AAB78345E /* Pods_CicekSepeti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CicekSepeti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFA80E7DADB9422949B31336 /* Pods-CicekSepetiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CicekSepetiUITests.debug.xcconfig"; path = "Target Support Files/Pods-CicekSepetiUITests/Pods-CicekSepetiUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BFBE9EE056C579978DE6B69A /* Pods-CicekSepetiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CicekSepetiTests.debug.xcconfig"; path = "Target Support Files/Pods-CicekSepetiTests/Pods-CicekSepetiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C017EC1EDFF8943AF45A51F2 /* Pods-CicekSepeti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CicekSepeti.debug.xcconfig"; path = "Target Support Files/Pods-CicekSepeti/Pods-CicekSepeti.debug.xcconfig"; sourceTree = "<group>"; };
+		C1E4A3AE2089BB42A42C04C3 /* Pods_CicekSepetiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CicekSepetiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C73032A6F1A98437138AF54F /* Pods-CicekSepeti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CicekSepeti.release.xcconfig"; path = "Target Support Files/Pods-CicekSepeti/Pods-CicekSepeti.release.xcconfig"; sourceTree = "<group>"; };
+		F51B9DF389132F82D7DF4405 /* Pods-CicekSepetiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CicekSepetiUITests.release.xcconfig"; path = "Target Support Files/Pods-CicekSepetiUITests/Pods-CicekSepetiUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9853C2E50644837EE9D99BE3 /* Pods_CicekSepeti.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF13775C4262D68E7B9CD7FA /* Pods_CicekSepetiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,12 +108,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBDAF4592C91BAF30F98543A /* Pods_CicekSepetiUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F9FA19C9365A05EC65499FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C017EC1EDFF8943AF45A51F2 /* Pods-CicekSepeti.debug.xcconfig */,
+				C73032A6F1A98437138AF54F /* Pods-CicekSepeti.release.xcconfig */,
+				BFBE9EE056C579978DE6B69A /* Pods-CicekSepetiTests.debug.xcconfig */,
+				70C76A0C0C8981AE71FC50AE /* Pods-CicekSepetiTests.release.xcconfig */,
+				BFA80E7DADB9422949B31336 /* Pods-CicekSepetiUITests.debug.xcconfig */,
+				F51B9DF389132F82D7DF4405 /* Pods-CicekSepetiUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		1E9C887C24BD115000647083 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +135,8 @@
 				1E9C889E24BD115200647083 /* CicekSepetiTests */,
 				1E9C88A924BD115200647083 /* CicekSepetiUITests */,
 				1E9C888624BD115000647083 /* Products */,
+				0F9FA19C9365A05EC65499FA /* Pods */,
+				AB4F17D9D5394B83C911F3FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				1E9C88BF24BD120600647083 /* List */,
+				1EF1E90F24BE2BD4007E7273 /* Common */,
 				1E9C88B824BD118D00647083 /* Api */,
 				1E9C888824BD115000647083 /* AppDelegate.swift */,
 				1E9C888A24BD115000647083 /* SceneDelegate.swift */,
@@ -160,6 +197,7 @@
 		1E9C88BF24BD120600647083 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				1EF1E90A24BE24AD007E7273 /* Cells */,
 				1E9C88CA24BD128E00647083 /* Interactor */,
 				1E9C88C524BD126600647083 /* Entity */,
 				1E9C88C424BD125D00647083 /* Protocols */,
@@ -195,6 +233,41 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		1EF1E90A24BE24AD007E7273 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1EF1E90B24BE26E8007E7273 /* ListCell.swift */,
+				1EF1E90C24BE26E8007E7273 /* ListCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1EF1E90F24BE2BD4007E7273 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1EF1E91024BE2BDC007E7273 /* Splash */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1EF1E91024BE2BDC007E7273 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				1EF1E91124BE2BF4007E7273 /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		AB4F17D9D5394B83C911F3FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA40A15C6EE6D42AAB78345E /* Pods_CicekSepeti.framework */,
+				C1E4A3AE2089BB42A42C04C3 /* Pods_CicekSepetiTests.framework */,
+				8D9ACE84227BAE31AF19458E /* Pods_CicekSepetiUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -202,9 +275,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E9C88AF24BD115200647083 /* Build configuration list for PBXNativeTarget "CicekSepeti" */;
 			buildPhases = (
+				B35BAE65985F9BEA886AB132 /* [CP] Check Pods Manifest.lock */,
 				1E9C888124BD115000647083 /* Sources */,
 				1E9C888224BD115000647083 /* Frameworks */,
 				1E9C888324BD115000647083 /* Resources */,
+				AC6C1052AF6D16E153455087 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -219,6 +294,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E9C88B224BD115200647083 /* Build configuration list for PBXNativeTarget "CicekSepetiTests" */;
 			buildPhases = (
+				BE15541D927EF35C024E6405 /* [CP] Check Pods Manifest.lock */,
 				1E9C889724BD115200647083 /* Sources */,
 				1E9C889824BD115200647083 /* Frameworks */,
 				1E9C889924BD115200647083 /* Resources */,
@@ -237,6 +313,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E9C88B524BD115200647083 /* Build configuration list for PBXNativeTarget "CicekSepetiUITests" */;
 			buildPhases = (
+				DA1C552E1C150B18613BCFB8 /* [CP] Check Pods Manifest.lock */,
 				1E9C88A224BD115200647083 /* Sources */,
 				1E9C88A324BD115200647083 /* Frameworks */,
 				1E9C88A424BD115200647083 /* Resources */,
@@ -300,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E9C889524BD115200647083 /* LaunchScreen.storyboard in Resources */,
+				1EF1E90E24BE26E8007E7273 /* ListCell.xib in Resources */,
 				1E9C889224BD115200647083 /* Assets.xcassets in Resources */,
 				1E9C889024BD115000647083 /* Main.storyboard in Resources */,
 			);
@@ -321,6 +399,92 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AC6C1052AF6D16E153455087 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CicekSepeti/Pods-CicekSepeti-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CicekSepeti/Pods-CicekSepeti-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CicekSepeti/Pods-CicekSepeti-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B35BAE65985F9BEA886AB132 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CicekSepeti-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE15541D927EF35C024E6405 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CicekSepetiTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA1C552E1C150B18613BCFB8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CicekSepetiUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1E9C888124BD115000647083 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -331,6 +495,8 @@
 				1E9C888B24BD115000647083 /* SceneDelegate.swift in Sources */,
 				1E9C88C324BD124900647083 /* Protocols.swift in Sources */,
 				1E9C88C924BD128B00647083 /* Interactor.swift in Sources */,
+				1EF1E91224BE2BF4007E7273 /* SplashViewController.swift in Sources */,
+				1EF1E90D24BE26E8007E7273 /* ListCell.swift in Sources */,
 				1E9C88CC24BD12A400647083 /* Endpoints.swift in Sources */,
 				1E9C88C124BD122100647083 /* ListViewController.swift in Sources */,
 				1E9C88BC24BD11A400647083 /* Result.swift in Sources */,
@@ -508,6 +674,7 @@
 		};
 		1E9C88B024BD115200647083 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C017EC1EDFF8943AF45A51F2 /* Pods-CicekSepeti.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +694,7 @@
 		};
 		1E9C88B124BD115200647083 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C73032A6F1A98437138AF54F /* Pods-CicekSepeti.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +714,7 @@
 		};
 		1E9C88B324BD115200647083 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFBE9EE056C579978DE6B69A /* Pods-CicekSepetiTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -568,6 +737,7 @@
 		};
 		1E9C88B424BD115200647083 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70C76A0C0C8981AE71FC50AE /* Pods-CicekSepetiTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -590,6 +760,7 @@
 		};
 		1E9C88B624BD115200647083 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFA80E7DADB9422949B31336 /* Pods-CicekSepetiUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -610,6 +781,7 @@
 		};
 		1E9C88B724BD115200647083 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F51B9DF389132F82D7DF4405 /* Pods-CicekSepetiUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
