@@ -27,6 +27,9 @@
 		1EF1E90D24BE26E8007E7273 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1E90B24BE26E8007E7273 /* ListCell.swift */; };
 		1EF1E90E24BE26E8007E7273 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EF1E90C24BE26E8007E7273 /* ListCell.xib */; };
 		1EF1E91224BE2BF4007E7273 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1E91124BE2BF4007E7273 /* SplashViewController.swift */; };
+		1EF1E91524BE314B007E7273 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1E91424BE314B007E7273 /* LoadingView.swift */; };
+		1EF1E91724BE3154007E7273 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EF1E91624BE3154007E7273 /* LoadingView.xib */; };
+		1EF1E91924BE31A4007E7273 /* UIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1E91824BE31A4007E7273 /* UIManager.swift */; };
 		9853C2E50644837EE9D99BE3 /* Pods_CicekSepeti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA40A15C6EE6D42AAB78345E /* Pods_CicekSepeti.framework */; };
 		BF13775C4262D68E7B9CD7FA /* Pods_CicekSepetiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E4A3AE2089BB42A42C04C3 /* Pods_CicekSepetiTests.framework */; };
 		DBDAF4592C91BAF30F98543A /* Pods_CicekSepetiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D9ACE84227BAE31AF19458E /* Pods_CicekSepetiUITests.framework */; };
@@ -76,6 +79,9 @@
 		1EF1E90B24BE26E8007E7273 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		1EF1E90C24BE26E8007E7273 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 		1EF1E91124BE2BF4007E7273 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		1EF1E91424BE314B007E7273 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		1EF1E91624BE3154007E7273 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		1EF1E91824BE31A4007E7273 /* UIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIManager.swift; sourceTree = "<group>"; };
 		70C76A0C0C8981AE71FC50AE /* Pods-CicekSepetiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CicekSepetiTests.release.xcconfig"; path = "Target Support Files/Pods-CicekSepetiTests/Pods-CicekSepetiTests.release.xcconfig"; sourceTree = "<group>"; };
 		8D9ACE84227BAE31AF19458E /* Pods_CicekSepetiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CicekSepetiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA40A15C6EE6D42AAB78345E /* Pods_CicekSepeti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CicekSepeti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,7 +251,9 @@
 		1EF1E90F24BE2BD4007E7273 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1EF1E91324BE3121007E7273 /* Loading */,
 				1EF1E91024BE2BDC007E7273 /* Splash */,
+				1EF1E91824BE31A4007E7273 /* UIManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -256,6 +264,15 @@
 				1EF1E91124BE2BF4007E7273 /* SplashViewController.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		1EF1E91324BE3121007E7273 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				1EF1E91424BE314B007E7273 /* LoadingView.swift */,
+				1EF1E91624BE3154007E7273 /* LoadingView.xib */,
+			);
+			path = Loading;
 			sourceTree = "<group>";
 		};
 		AB4F17D9D5394B83C911F3FA /* Frameworks */ = {
@@ -379,6 +396,7 @@
 				1E9C889524BD115200647083 /* LaunchScreen.storyboard in Resources */,
 				1EF1E90E24BE26E8007E7273 /* ListCell.xib in Resources */,
 				1E9C889224BD115200647083 /* Assets.xcassets in Resources */,
+				1EF1E91724BE3154007E7273 /* LoadingView.xib in Resources */,
 				1E9C889024BD115000647083 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,10 +511,12 @@
 				1E9C88D024BD12BA00647083 /* ListWireframe.swift in Sources */,
 				1E9C888924BD115000647083 /* AppDelegate.swift in Sources */,
 				1E9C888B24BD115000647083 /* SceneDelegate.swift in Sources */,
+				1EF1E91924BE31A4007E7273 /* UIManager.swift in Sources */,
 				1E9C88C324BD124900647083 /* Protocols.swift in Sources */,
 				1E9C88C924BD128B00647083 /* Interactor.swift in Sources */,
 				1EF1E91224BE2BF4007E7273 /* SplashViewController.swift in Sources */,
 				1EF1E90D24BE26E8007E7273 /* ListCell.swift in Sources */,
+				1EF1E91524BE314B007E7273 /* LoadingView.swift in Sources */,
 				1E9C88CC24BD12A400647083 /* Endpoints.swift in Sources */,
 				1E9C88C124BD122100647083 /* ListViewController.swift in Sources */,
 				1E9C88BC24BD11A400647083 /* Result.swift in Sources */,

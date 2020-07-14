@@ -18,6 +18,8 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        UIManager.shared().showLoading(view: self.view)
         presenter?.startFetchingData()
         registerTableView()
     }
@@ -33,6 +35,7 @@ extension ListViewController:PresenterToViewProtocol{
     
     func showList(listArray: [RootObject]) {
         
+        UIManager.shared().removeLoading(view: self.view)
         for product in listArray {
             self.products.append(contentsOf: (product.resultObject.data?.products)!)
         }
@@ -40,7 +43,7 @@ extension ListViewController:PresenterToViewProtocol{
     }
     
     func showError() {
-        
+        UIManager.shared().removeLoading(view: self.view)
         let alert = UIAlertController(title: "Alert", message: "Problem Fetching List", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { _  in
             exit(0)

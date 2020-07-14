@@ -8,36 +8,40 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List View Controller-->
+        <!--Product List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ListViewController" customModule="CicekSepeti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ListViewController" customModule="CicekSepeti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M6d-iv-Gz5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="M6d-iv-Gz5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="e1H-SP-ldr"/>
                             <constraint firstItem="M6d-iv-Gz5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="i0a-nA-OBC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="M6d-iv-Gz5" secondAttribute="bottom" id="jDE-8g-xdU"/>
+                            <constraint firstItem="M6d-iv-Gz5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pj6-Rb-YEC"/>
                             <constraint firstItem="M6d-iv-Gz5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qie-Pl-IF8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Cic-Ac-Hi0"/>
+                    <navigationItem key="navigationItem" title="Product List" id="Cic-Ac-Hi0">
+                        <barButtonItem key="rightBarButtonItem" title="Filtrele" id="rZ4-Tz-XsO">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="M6d-iv-Gz5" id="Wsl-9i-LJV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2207" y="130"/>
+            <point key="canvasLocation" x="2205.7971014492755" y="129.91071428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mPP-dD-dlJ">
@@ -49,6 +53,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BuY-K7-Gor">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="sXQ-8X-ESE" kind="relationship" relationship="rootViewController" id="I94-EU-89z"/>
                     </connections>
