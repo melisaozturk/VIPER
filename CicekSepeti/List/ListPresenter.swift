@@ -19,8 +19,8 @@ class ListPresenter: ViewToPresenterProtocol {
         interactor?.getData()
     }
     
-    func showDetailController(navigationController: UINavigationController, data: Any?) {
-        wireframe?.pushToDetailPage(navigationConroller:navigationController, data: data)
+    func showFilterController(navigationController: UINavigationController) {
+        wireframe?.pushToFilterPage(navigationConroller:navigationController)
     }
 }
 

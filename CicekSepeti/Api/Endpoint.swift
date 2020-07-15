@@ -11,6 +11,7 @@ import Foundation
 protocol Endpoint {
     var base: String { get }
     var path: String { get }
+    var queryItem: [URLQueryItem] { get }
 }
 
 extension Endpoint {
@@ -18,7 +19,8 @@ extension Endpoint {
     var urlComponents: URLComponents {
         var components = URLComponents(string: base)!
         components.path = path
-        
+        components.queryItems = queryItem
+
         return components
     }
     

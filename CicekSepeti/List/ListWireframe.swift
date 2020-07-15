@@ -32,9 +32,9 @@ class ListWireframe: PresenterToWireframeProtocol {
         return listVC
     }
 
-    func pushToDetailPage(navigationConroller navigationController: UINavigationController, data: Any?) {
-//        let detailModule = DetailWireframe.createDetailModule(data: data)
-//        navigationController.pushViewController(detailModule,animated: true)
+    func pushToFilterPage(navigationConroller navigationController: UINavigationController) {
+        let detailModule =  FilterWireframe.createFilterModule()
+        navigationController.pushViewController(detailModule,animated: true)
     }
 }
 
