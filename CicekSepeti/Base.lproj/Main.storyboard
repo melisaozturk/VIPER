@@ -62,10 +62,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Ik4-gz-xdb" firstAttribute="top" secondItem="Dli-PB-4Xa" secondAttribute="top" id="EuN-yA-WkU"/>
                             <constraint firstItem="Dli-PB-4Xa" firstAttribute="bottom" secondItem="Ik4-gz-xdb" secondAttribute="bottom" id="KIZ-2L-fyA"/>
                             <constraint firstItem="Dli-PB-4Xa" firstAttribute="trailing" secondItem="Ik4-gz-xdb" secondAttribute="trailing" id="hHI-Vo-79B"/>
                             <constraint firstItem="Ik4-gz-xdb" firstAttribute="leading" secondItem="Dli-PB-4Xa" secondAttribute="leading" id="qcB-JU-hBK"/>
-                            <constraint firstItem="Ik4-gz-xdb" firstAttribute="top" secondItem="Dli-PB-4Xa" secondAttribute="top" id="r23-wx-F8y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dli-PB-4Xa"/>
                     </view>

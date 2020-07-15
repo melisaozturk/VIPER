@@ -21,20 +21,22 @@ class FilterViewController: UIViewController {
         
         tableViewSetup()
         navigationSetup()
+        presenter?.startFetchingData() //TODO: Verileri çekerken id sine göre sadece o product'lar çekilecek seçimID ve filtre grubu gönder
     }
     
     private func tableViewSetup() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
+        self.tableView.separatorStyle = .none
         self.tableView.register(UINib(nibName: "FilterCell", bundle: nil), forCellReuseIdentifier: "FilterCell")
     }
     
     private func navigationSetup() {
-           self.title = "Filtrele"
-           self.navigationController?.navigationBar.topItem?.backBarButtonItem =  UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-           self.navigationController?.navigationBar.topItem?.backBarButtonItem?.tintColor = .black
-       }
+        self.title = "Filtrele"
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem =  UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.tintColor = .black
+    }
 }
 
 extension FilterViewController: FilterPresenterToViewProtocol{
@@ -42,7 +44,12 @@ extension FilterViewController: FilterPresenterToViewProtocol{
     func showList(listArray: [RootObject]) {
         
         UIManager.shared().removeLoading(view: self.view)
-        presenter?.startFetchingData() //TODO: Verileri çekerken id sine göre sadece o product'lar çekilecek
+        for filters in listArray {
+            //            Uygulanabilecek filtreler
+            if let filters = filters.resultObject.data?.mainFilter?.dynamicFilter {
+                self.filters = filters
+            }
+        }
         self.tableView.reloadData()
     }
     
@@ -60,43 +67,54 @@ extension FilterViewController: FilterPresenterToViewProtocol{
 extension FilterViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return self.filters.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch section {
+        default:
+            let values = self.filters[section].valuesObject!
+            return values.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FilterCell", for: indexPath) as! FilterCell
-        cell.setData()
-       
-//        if cell.btnCategoryOne.isSelected {
-//
-//        } else if cell.btnCategoryTwo.isSelected {
-//
-//        } else if cell.btnCategoryThree.isSelected {
-//
-//        }
         
+        if !self.filters.isEmpty {
+            let values = self.filters[indexPath.section].valuesObject!
+//            for name in values {
+                if let name = values[indexPath.row].name {
+                    cell.btnFilter.setTitle(name, for: .normal)
+//                }
+            }
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = Header()
-        headerView.lblHeader.text = "HEADER TEXT HERE"
+        if !self.filters.isEmpty {
+            if let name = self.filters[section].name {
+                headerView.lblHeader.text = name
+            }
+        }
         return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 50
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        for item in self.filters {
+            presenter?.startFetchingData(id: item.valuesObject![indexPath.row].id , group: item.valuesObject![indexPath.row].group)
+        }
+        
+
     }
 }
