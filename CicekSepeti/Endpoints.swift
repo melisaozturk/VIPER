@@ -35,7 +35,7 @@ extension Endpoints: Endpoint {
             return [URLQueryItem(name: "", value: "")]
         case .filter:
             let id = UserDefaults.standard.integer(forKey: "id")
-                return [URLQueryItem(name: "id", value: String(describing: 10))]
+                return [URLQueryItem(name: "id", value: String(describing: id))]
         }
     }
     

@@ -117,12 +117,8 @@ extension FilterViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
-        for item in self.filters {
-                 if let id = item.valuesObject![indexPath.row].id {
-                     UserDefaults.standard.set(id, forKey: "id")
-                    
-                 }
-             }
+        if let id = self.filters[indexPath.section].valuesObject![indexPath.row].id {
+            UserDefaults.standard.set(id, forKey: "id")
+        }
     }
 }

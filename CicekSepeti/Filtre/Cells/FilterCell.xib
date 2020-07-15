@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="351" height="65"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JxM-LO-TQz">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JxM-LO-TQz">
                         <rect key="frame" x="30" y="10" width="291" height="45"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="2eV-86-4qc"/>
