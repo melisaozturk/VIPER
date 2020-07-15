@@ -14,24 +14,54 @@ class ListViewController: UIViewController {
     
     weak var presenter: ViewToPresenterProtocol?
     var products = [Product]()
-//    var filteredProducts = [DynamicFilter]()
-//    var filtered: Bool = false
+    var filters = [DynamicFilter]()
+    var filteredProducts = [Product]()
+    var filtered:  Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.setNavigationBarHidden(false, animated: false)
         UIManager.shared().showLoading(view: self.view)
-        presenter?.startFetchingData()
+//        if !filtered {
+         presenter?.startFetchingData()
+//        }
         registerTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        NotificationCenter.default.addObserver(self, selector: #selector(getNotification(_:)), name: Notification.Name("filteredProduct"), object: nil)
+//        self.tableView.reloadData()
+//        TODO: table scroll top
+//        self.tableView.scrollsToTop = true
+//        if filtered == nil {
+//            presenter?.startFetchingData()
+//            filtered = false
+//        } else {
+//              filtered = true
+//        }
+    }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        NotificationCenter.default.removeObserver(self)
+//    }
+    
+//    @objc func getNotification(_ notification: Notification) {
+//        if let dict = notification.userInfo as NSDictionary? {
+//            if let data = dict["filtered"] as? Bool {
+//                self.filtered = data
+//            }
+//        }
+//    }
+    
     @IBAction func btnFilter(_ sender: Any) {
-//        filtered = true
-        self.presenter?.showFilterController(navigationController: navigationController!)
+        //        filtered = true
+        self.presenter?.showFilterController(navigationController: navigationController!, data: self.filters)
         
-//TODO: Wireframde çağır filter sayfası açılsın.Filtre seçimi yap.  filtrenin grubuna göre request at. Bu sayfadan interactor çağır. viewwillappear'da
-//        self.tableView.reloadData() çağır
+        //TODO: Wireframde çağır filter sayfası açılsın.Filtre seçimi yap.  filtrenin grubuna göre request at. Bu sayfadan interactor çağır. viewwillappear'da
+        //        self.tableView.reloadData() çağır
 //        grup tipine göre seçim id si gönderilecek (DynamicFilter valuesObject array'i)
 //        for filtered in filteredProducts {
 //            if let id = filtered.productGroupId {
@@ -52,17 +82,13 @@ extension ListViewController:PresenterToViewProtocol{
     func showList(listArray: [RootObject]) {
         
         UIManager.shared().removeLoading(view: self.view)
-        for product in listArray {
-            if let product = product.resultObject.data?.products {
+        
+        for item in listArray {
+            if let product = item.resultObject.data?.products, let filters = item.resultObject.data?.mainFilter?.dynamicFilter {
                 self.products.append(contentsOf: product)
+                self.filters.append(contentsOf: filters)
             }
         }
-        
-//        for filtered in listArray {
-//            if let filteredData = filtered.resultObject.data?.mainFilter?.dynamicFilter {
-//                self.filteredProducts.append(contentsOf: filteredData)
-//            }
-//        }
         self.tableView.reloadData()
     }
     

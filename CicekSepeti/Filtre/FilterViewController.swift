@@ -14,14 +14,19 @@ class FilterViewController: UIViewController {
     
     weak var presenter: FilterViewToPresenterProtocol?
     var filters = [DynamicFilter]()
-    var id: Int?
+    var filteredProduct = [Product]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableViewSetup()
         navigationSetup()
-        presenter?.startFetchingData() //TODO: Verileri çekerken id sine göre sadece o product'lar çekilecek seçimID ve filtre grubu gönder
+    }
+    
+    @IBAction func btnApply(_ sender: Any) {
+        UIManager.shared().showLoading(view: self.view)
+         presenter?.startFetchingData()
+//        NotificationCenter.default.post(name: Notification.Name("filteredProduct"), object: nil, userInfo: ["filtered":true])
     }
     
     private func tableViewSetup() {
@@ -29,6 +34,7 @@ class FilterViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
         self.tableView.separatorStyle = .none
+        self.tableView.isUserInteractionEnabled = true
         self.tableView.register(UINib(nibName: "FilterCell", bundle: nil), forCellReuseIdentifier: "FilterCell")
     }
     
@@ -45,12 +51,13 @@ extension FilterViewController: FilterPresenterToViewProtocol{
         
         UIManager.shared().removeLoading(view: self.view)
         for filters in listArray {
-            //            Uygulanabilecek filtreler
-            if let filters = filters.resultObject.data?.mainFilter?.dynamicFilter {
-                self.filters = filters
+            //            Uygulanan filtre
+            if let filtered = filters.resultObject.data?.products {
+                self.filteredProduct = filtered
             }
         }
-        self.tableView.reloadData()
+        self.presenter?.showListController(navigationController: navigationController!, data: self.filteredProduct)
+//        self.tableView.reloadData()
     }
     
     func showError() {
@@ -80,13 +87,12 @@ extension FilterViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FilterCell", for: indexPath) as! FilterCell
-        
+        cell.isUserInteractionEnabled = true
+
         if !self.filters.isEmpty {
             let values = self.filters[indexPath.section].valuesObject!
-//            for name in values {
                 if let name = values[indexPath.row].name {
                     cell.btnFilter.setTitle(name, for: .normal)
-//                }
             }
         }
         return cell
@@ -111,10 +117,12 @@ extension FilterViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
         for item in self.filters {
-            presenter?.startFetchingData(id: item.valuesObject![indexPath.row].id , group: item.valuesObject![indexPath.row].group)
-        }
-        
-
+                 if let id = item.valuesObject![indexPath.row].id {
+                     UserDefaults.standard.set(id, forKey: "id")
+                    
+                 }
+             }
     }
 }

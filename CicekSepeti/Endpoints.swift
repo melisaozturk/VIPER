@@ -34,8 +34,8 @@ extension Endpoints: Endpoint {
         case .list:
             return [URLQueryItem(name: "", value: "")]
         case .filter:
-            let Id = UserDefaults.standard.integer(forKey: "Id")
-            return [URLQueryItem(name: "productGroupId", value: String(describing: Id))]
+            let id = UserDefaults.standard.integer(forKey: "id")
+                return [URLQueryItem(name: "id", value: String(describing: 10))]
         }
     }
     

@@ -15,7 +15,7 @@ class FilterWireframe: FilterPresenterToWireframeProtocol {
         return UIStoryboard(name: "Main", bundle: Bundle.main)
     }
     
-    static func createFilterModule() -> FilterViewController {
+    static func createFilterModule(data: Any?) -> FilterViewController {
         let filterVC = mainStoryboard.instantiateViewController(withIdentifier: "FilterViewController") as! FilterViewController
         
         let interactor: FilterPresenterToInteractorProtocol = FilterInteractor()
@@ -28,8 +28,17 @@ class FilterWireframe: FilterPresenterToWireframeProtocol {
         presenter.interactor = interactor
         interactor.presenter = presenter
         
+        if let data = data {
+            filterVC.filters = data as! [DynamicFilter]
+        }
         return filterVC
     }
+    
+    func pushToListPage(navigationController: UINavigationController, data: Any?) {
+           let detailModule =  ListWireframe.createListModule(data: data)
+           navigationController.pushViewController(detailModule,animated: true)
+       }
+       
 
 }
 

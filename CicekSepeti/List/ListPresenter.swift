@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class ListPresenter: ViewToPresenterProtocol {
+    
    
     var view: PresenterToViewProtocol?
     var interactor: PresenterToInteractorProtocol?
@@ -19,8 +20,8 @@ class ListPresenter: ViewToPresenterProtocol {
         interactor?.getData()
     }
     
-    func showFilterController(navigationController: UINavigationController) {
-        wireframe?.pushToFilterPage(navigationConroller:navigationController)
+    func showFilterController(navigationController: UINavigationController, data: Any?) {
+        wireframe?.pushToFilterPage(navigationConroller:navigationController, data: data)
     }
 }
 

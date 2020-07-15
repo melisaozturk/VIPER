@@ -23,7 +23,7 @@ class FilterInteractor: ApiClient, FilterPresenterToInteractorProtocol {
     }
     
     func getData() {
-        getFeed(from: .list, completion: { response in
+        getFeed(from: .filter, completion: { response in
             switch response {
             case .success(let successResponse):
                 guard let results = successResponse.self else {return}

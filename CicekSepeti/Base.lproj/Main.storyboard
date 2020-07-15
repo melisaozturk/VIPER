@@ -47,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="2205.7971014492755" y="129.91071428571428"/>
         </scene>
-        <!--Filter View Controller-->
+        <!--Filtre-->
         <scene sceneID="asy-ya-XJl">
             <objects>
                 <viewController storyboardIdentifier="FilterViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OHM-A8-TVx" customClass="FilterViewController" customModule="CicekSepeti" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,6 +69,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dli-PB-4Xa"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Filtre" id="EkA-sI-bgE">
+                        <barButtonItem key="rightBarButtonItem" title="Uygula" id="TCE-Dd-Vqp">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="btnApply:" destination="OHM-A8-TVx" id="Or6-Zv-SfJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="Ik4-gz-xdb" id="Rdc-Iz-5Cg"/>

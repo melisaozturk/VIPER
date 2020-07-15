@@ -20,6 +20,9 @@ class FilterPresenter: FilterViewToPresenterProtocol {
         interactor?.getData()
     }
     
+    func showListController(navigationController: UINavigationController, data: Any?) {
+        wireframe?.pushToListPage(navigationController: navigationController, data: data)
+       }
 }
 
 extension FilterPresenter: FilterInteractorToPresenterProtocol {

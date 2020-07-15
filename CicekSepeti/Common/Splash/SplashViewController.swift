@@ -18,7 +18,7 @@ class SplashViewController: UIViewController {
     }
     
     @objc func showView(){
-        let list = ListWireframe.createListModule()
+        let list = ListWireframe.createListModule(data: nil)
         navigationController!.viewControllers = [list]
     }
 

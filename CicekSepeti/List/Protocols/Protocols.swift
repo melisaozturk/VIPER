@@ -15,7 +15,7 @@ protocol ViewToPresenterProtocol: class{
     var interactor: PresenterToInteractorProtocol? {get set}
     var wireframe: PresenterToWireframeProtocol? {get set}
     func startFetchingData()
-    func showFilterController(navigationController:UINavigationController)
+    func showFilterController(navigationController:UINavigationController, data: Any?)
 }
 
 protocol PresenterToViewProtocol: class{
@@ -24,8 +24,8 @@ protocol PresenterToViewProtocol: class{
 }
 
 protocol PresenterToWireframeProtocol: class {
-    static func createListModule() -> ListViewController
-    func pushToFilterPage(navigationConroller:UINavigationController)
+    static func createListModule(data: Any?) -> ListViewController
+    func pushToFilterPage(navigationConroller:UINavigationController, data: Any?)
 }
 
 protocol PresenterToInteractorProtocol: class {

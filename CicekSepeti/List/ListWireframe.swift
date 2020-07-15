@@ -16,7 +16,7 @@ class ListWireframe: PresenterToWireframeProtocol {
         return UIStoryboard(name: "Main", bundle: Bundle.main)
     }
     
-    static func createListModule() -> ListViewController {
+    static func createListModule(data: Any?) -> ListViewController {
         let listVC = mainStoryboard.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
         
         let interactor: PresenterToInteractorProtocol = ListInteractor()
@@ -29,11 +29,15 @@ class ListWireframe: PresenterToWireframeProtocol {
         presenter.interactor = interactor
         interactor.presenter = presenter
         
+        if let data = data {
+            listVC.filteredProducts = data as! [Product]
+        }
+        
         return listVC
     }
 
-    func pushToFilterPage(navigationConroller navigationController: UINavigationController) {
-        let detailModule =  FilterWireframe.createFilterModule()
+    func pushToFilterPage(navigationConroller navigationController: UINavigationController, data: Any?) {
+        let detailModule =  FilterWireframe.createFilterModule(data: data)
         navigationController.pushViewController(detailModule,animated: true)
     }
 }
