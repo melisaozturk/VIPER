@@ -116,16 +116,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ciceksepeti" translatesAutoresizingMaskIntoConstraints="NO" id="UHV-kt-78F">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ciceksepeti" translatesAutoresizingMaskIntoConstraints="NO" id="YeC-Qb-z0Q">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="zqH-gt-aZx" firstAttribute="bottom" secondItem="UHV-kt-78F" secondAttribute="bottom" id="TQW-IZ-NKi"/>
-                            <constraint firstItem="UHV-kt-78F" firstAttribute="leading" secondItem="zqH-gt-aZx" secondAttribute="leading" id="abh-e1-Xjs"/>
-                            <constraint firstItem="UHV-kt-78F" firstAttribute="top" secondItem="zqH-gt-aZx" secondAttribute="top" id="mHW-Ff-DTI"/>
-                            <constraint firstItem="zqH-gt-aZx" firstAttribute="trailing" secondItem="UHV-kt-78F" secondAttribute="trailing" id="zSZ-4K-8tG"/>
+                            <constraint firstItem="zqH-gt-aZx" firstAttribute="trailing" secondItem="YeC-Qb-z0Q" secondAttribute="trailing" id="3kI-I4-pme"/>
+                            <constraint firstItem="zqH-gt-aZx" firstAttribute="bottom" secondItem="YeC-Qb-z0Q" secondAttribute="bottom" id="KSW-Xx-7Gg"/>
+                            <constraint firstItem="YeC-Qb-z0Q" firstAttribute="leading" secondItem="zqH-gt-aZx" secondAttribute="leading" id="LDb-2K-GMI"/>
+                            <constraint firstItem="YeC-Qb-z0Q" firstAttribute="top" secondItem="zqH-gt-aZx" secondAttribute="top" id="ht2-dj-eJr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zqH-gt-aZx"/>
                     </view>

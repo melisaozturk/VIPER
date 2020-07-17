@@ -30,8 +30,8 @@ class FilterViewController: UIViewController {
     }
     
     @IBAction func btnApply(_ sender: Any) {
-        UIManager.shared().showLoading(view: self.view)
         self.navigationController?.navigationBar.isUserInteractionEnabled = false
+        UIManager.shared().showLoading(view: self.view)
          presenter?.startFetchingData()
     }
     
