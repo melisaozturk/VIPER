@@ -30,43 +30,11 @@ class ListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        NotificationCenter.default.addObserver(self, selector: #selector(getNotification(_:)), name: Notification.Name("filteredProduct"), object: nil)
         self.tableView.reloadData()
-//        TODO: table scroll top
-//        self.tableView.scrollsToTop = true
-//        if filtered == nil {
-//            presenter?.startFetchingData()
-//            filtered = false
-//        } else {
-//              filtered = true
-//        }
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        NotificationCenter.default.removeObserver(self)
-//    }
-    
-//    @objc func getNotification(_ notification: Notification) {
-//        if let dict = notification.userInfo as NSDictionary? {
-//            if let data = dict["filtered"] as? Bool {
-//                self.filtered = data
-//            }
-//        }
-//    }
-    
     @IBAction func btnFilter(_ sender: Any) {
-        //        filtered = true
         self.presenter?.showFilterController(navigationController: navigationController!, data: self.filters)
-        
-        //TODO: Wireframde çağır filter sayfası açılsın.Filtre seçimi yap.  filtrenin grubuna göre request at. Bu sayfadan interactor çağır. viewwillappear'da
-        //        self.tableView.reloadData() çağır
-//        grup tipine göre seçim id si gönderilecek (DynamicFilter valuesObject array'i)
-//        for filtered in filteredProducts {
-//            if let id = filtered.productGroupId {
-//             UserDefaults.standard.set(id, forKey: "Id")
-//            }
-//        }
     }
     
     private func registerTableView() {
@@ -109,18 +77,10 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListCell
-        
-//        if filtered {
-//            if !self.filteredProducts.isEmpty {
-//                cell.setData(data: self.products[indexPath.row])
-//                cell.selectionStyle = .none
-//            }
-//        } else {
             if !self.products.isEmpty {
                 cell.setData(data: self.products[indexPath.row])
                 cell.selectionStyle = .none
             }
-//        }
         return cell
     }
     

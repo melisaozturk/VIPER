@@ -25,7 +25,6 @@ class Header: UIView {
     }
     
     private func setup() {
-        //Localization yap
         view = loadViewFromNib()
         view.frame = bounds
         view.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]

@@ -30,7 +30,6 @@ class FilterViewController: UIViewController {
     @IBAction func btnApply(_ sender: Any) {
         UIManager.shared().showLoading(view: self.view)
          presenter?.startFetchingData()
-//        NotificationCenter.default.post(name: Notification.Name("filteredProduct"), object: nil, userInfo: ["filtered":true])
     }
     
     private func tableViewSetup() {

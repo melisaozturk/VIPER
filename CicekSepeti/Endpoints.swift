@@ -53,6 +53,10 @@ extension Endpoints: Endpoint {
                     queryList.append(URLQueryItem(name: String(group!), value: String(id)))
                 }
             }
+            UserDefaults.standard.removeObject(forKey: "group")
+            UserDefaults.standard.removeObject(forKey: "detailList")
+            UserDefaults.standard.removeObject(forKey: "checkList")
+            UserDefaults.standard.removeObject(forKey: "priceList")
             return queryList
         }
     }
