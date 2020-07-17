@@ -14,7 +14,7 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         
-        perform(#selector(showView), with: nil, afterDelay: 2)
+        perform(#selector(showView), with: nil, afterDelay: 3)
     }
     
     @objc func showView(){

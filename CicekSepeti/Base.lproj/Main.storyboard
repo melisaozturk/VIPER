@@ -115,7 +115,18 @@
                     <view key="view" contentMode="scaleToFill" id="i1X-FE-Dla">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ciceksepeti" translatesAutoresizingMaskIntoConstraints="NO" id="UHV-kt-78F">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zqH-gt-aZx" firstAttribute="bottom" secondItem="UHV-kt-78F" secondAttribute="bottom" id="TQW-IZ-NKi"/>
+                            <constraint firstItem="UHV-kt-78F" firstAttribute="leading" secondItem="zqH-gt-aZx" secondAttribute="leading" id="abh-e1-Xjs"/>
+                            <constraint firstItem="UHV-kt-78F" firstAttribute="top" secondItem="zqH-gt-aZx" secondAttribute="top" id="mHW-Ff-DTI"/>
+                            <constraint firstItem="zqH-gt-aZx" firstAttribute="trailing" secondItem="UHV-kt-78F" secondAttribute="trailing" id="zSZ-4K-8tG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zqH-gt-aZx"/>
                     </view>
                     <navigationItem key="navigationItem" id="M5I-R9-Xsf"/>
@@ -128,4 +139,7 @@
             <point key="canvasLocation" x="1306" y="130"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ciceksepeti" width="300" height="300"/>
+    </resources>
 </document>
