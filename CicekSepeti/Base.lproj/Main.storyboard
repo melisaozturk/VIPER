@@ -79,6 +79,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="btnFilter" destination="TCE-Dd-Vqp" id="R8k-80-oRU"/>
                         <outlet property="tableView" destination="Ik4-gz-xdb" id="Rdc-Iz-5Cg"/>
                     </connections>
                 </viewController>

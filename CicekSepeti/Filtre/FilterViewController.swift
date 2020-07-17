@@ -11,6 +11,7 @@ import UIKit
 class FilterViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnFilter: UIBarButtonItem!
     
     weak var presenter: FilterViewToPresenterProtocol?
     var filters = [DynamicFilter]()
@@ -25,10 +26,12 @@ class FilterViewController: UIViewController {
         
         tableViewSetup()
         navigationSetup()
+        btnFilter.isEnabled = false
     }
     
     @IBAction func btnApply(_ sender: Any) {
         UIManager.shared().showLoading(view: self.view)
+        self.navigationController?.navigationBar.isUserInteractionEnabled = false
          presenter?.startFetchingData()
     }
     
@@ -54,6 +57,7 @@ extension FilterViewController: FilterPresenterToViewProtocol{
     func showList(listArray: [RootObject]) {
         
         UIManager.shared().removeLoading(view: self.view)
+        self.navigationController?.navigationBar.isUserInteractionEnabled = true
         for filters in listArray {
             //            Uygulanan filtre
             if let filtered = filters.resultObject.data?.products {
@@ -65,6 +69,7 @@ extension FilterViewController: FilterPresenterToViewProtocol{
     
     func showError() {
         UIManager.shared().removeLoading(view: self.view)
+        self.navigationController?.navigationBar.isUserInteractionEnabled = true
         let alert = UIAlertController(title: "Alert", message: "Problem Fetching List", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { _  in
             exit(0)
@@ -120,6 +125,7 @@ extension FilterViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        btnFilter.isEnabled = true
         if let group = self.filters[indexPath.section].valuesObject![indexPath.row].group, let id = self.filters[indexPath.section].valuesObject![indexPath.row].id {
             if group == 1 {
                 UserDefaults.standard.set("detailList", forKey: "group")
@@ -135,5 +141,14 @@ extension FilterViewController: UITableViewDelegate, UITableViewDataSource {
                 UserDefaults.standard.set(priceList, forKey: "priceList")
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        btnFilter.isEnabled = false
+
+        UserDefaults.standard.removeObject(forKey: "group")
+        UserDefaults.standard.removeObject(forKey: "detailList")
+        UserDefaults.standard.removeObject(forKey: "checkList")
+        UserDefaults.standard.removeObject(forKey: "priceList")
     }
 }
