@@ -29,7 +29,11 @@ class ListCell: UITableViewCell {
     func setData(data: Product) {
         if let name = data.name, let price = data.price!.total, let image = data.image, let currency = data.price?.currencyCode {
             let url = URL(string: image)
-            self.imgProduct.kf.setImage(with: url)
+            if image.isEmpty {
+                self.imgProduct.image = UIImage(named: "ciceksepeti")
+            } else {
+                self.imgProduct.kf.setImage(with: url)
+            }
             
             self.lblName.text = name
             self.lblPrice.text = String(describing: "\(price) \(currency)")
