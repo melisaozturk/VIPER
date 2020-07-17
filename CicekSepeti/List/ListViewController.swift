@@ -23,8 +23,8 @@ class ListViewController: UIViewController {
         
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.hidesBackButton = true
-        UIManager.shared().showLoading(view: self.view)
         self.navigationController?.navigationBar.isUserInteractionEnabled = false
+        UIManager.shared().showLoading(view: self.view)
         presenter?.startFetchingData()
         registerTableView()
     }

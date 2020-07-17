@@ -19,7 +19,13 @@ class SplashViewController: UIViewController {
     
     @objc func showView(){
         let list = ListWireframe.createListModule(data: nil)
-        navigationController!.viewControllers = [list]
+        
+        if let navigation = navigationController {
+            navigation.viewControllers = [list]
+        } else {
+            let navigationC = UINavigationController()
+            navigationC.viewControllers = [list]
+        }
     }
 
 }
