@@ -39,6 +39,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnFilter" destination="rZ4-Tz-XsO" id="Pqq-Rd-rVe"/>
                         <outlet property="tableView" destination="M6d-iv-Gz5" id="Wsl-9i-LJV"/>
                         <segue destination="OHM-A8-TVx" kind="presentation" identifier="FilterSegue" id="B0M-uu-I5b"/>
                     </connections>
@@ -111,7 +112,7 @@
         <!--Splash View Controller-->
         <scene sceneID="wtk-ab-iMe">
             <objects>
-                <viewController id="sXQ-8X-ESE" customClass="SplashViewController" customModule="CicekSepeti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sXQ-8X-ESE" customClass="SplashViewController" customModule="CicekSepeti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i1X-FE-Dla">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

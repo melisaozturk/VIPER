@@ -11,6 +11,7 @@ import UIKit
 class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnFilter: UIBarButtonItem!
     
     weak var presenter: ViewToPresenterProtocol?
     var products = [Product]()
@@ -24,6 +25,7 @@ class ListViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.hidesBackButton = true
         self.navigationController?.navigationBar.isUserInteractionEnabled = false
+        btnFilter.isEnabled = false
         UIManager.shared().showLoading(view: self.view)
         presenter?.startFetchingData()
         registerTableView()
@@ -51,6 +53,7 @@ extension ListViewController:PresenterToViewProtocol{
         
         UIManager.shared().removeLoading(view: self.view)
         self.navigationController?.navigationBar.isUserInteractionEnabled = true
+        btnFilter.isEnabled = true
         for item in listArray {
             if let product = item.resultObject.data?.products, let filters = item.resultObject.data?.mainFilter?.dynamicFilter {
                 self.products.append(contentsOf: product)
@@ -63,6 +66,7 @@ extension ListViewController:PresenterToViewProtocol{
     func showError() {
         UIManager.shared().removeLoading(view: self.view)
         self.navigationController?.navigationBar.isUserInteractionEnabled = true
+        btnFilter.isEnabled = true
         let alert = UIAlertController(title: "Alert", message: "Problem Fetching List", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { _  in
             exit(0)

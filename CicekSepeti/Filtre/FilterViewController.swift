@@ -31,6 +31,7 @@ class FilterViewController: UIViewController {
     
     @IBAction func btnApply(_ sender: Any) {
         self.navigationController?.navigationBar.isUserInteractionEnabled = false
+        btnFilter.isEnabled = false
         UIManager.shared().showLoading(view: self.view)
          presenter?.startFetchingData()
     }
@@ -58,6 +59,7 @@ extension FilterViewController: FilterPresenterToViewProtocol{
         
         UIManager.shared().removeLoading(view: self.view)
         self.navigationController?.navigationBar.isUserInteractionEnabled = true
+        btnFilter.isEnabled = true
         for filters in listArray {
             //            Uygulanan filtre
             if let filtered = filters.resultObject.data?.products {
@@ -70,6 +72,7 @@ extension FilterViewController: FilterPresenterToViewProtocol{
     func showError() {
         UIManager.shared().removeLoading(view: self.view)
         self.navigationController?.navigationBar.isUserInteractionEnabled = true
+        btnFilter.isEnabled = true
         let alert = UIAlertController(title: "Alert", message: "Problem Fetching List", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { _  in
             exit(0)
