@@ -34,8 +34,26 @@ extension Endpoints: Endpoint {
         case .list:
             return [URLQueryItem(name: "", value: "")]
         case .filter:
-            let id = UserDefaults.standard.integer(forKey: "id")
-                return [URLQueryItem(name: "id", value: String(describing: id))]
+            let group = UserDefaults.standard.string(forKey: "group")
+            let detailList = UserDefaults.standard.array(forKey: "detailList")  as? [Int] ?? [Int]()
+            let checkList = UserDefaults.standard.array(forKey: "checkList")  as? [Int] ?? [Int]()
+            let priceList = UserDefaults.standard.array(forKey: "priceList")  as? [Int] ?? [Int]()
+            var queryList = [URLQueryItem]()
+
+            if group == "detailList" && detailList.count != 0 {
+                for id in detailList {
+                    queryList.append(URLQueryItem(name: String(group!), value: String(id)))
+                }
+            } else if  group == "checkList" && checkList.count != 0 {
+                for id in checkList {
+                    queryList.append(URLQueryItem(name: String(group!), value: String(id)))
+                }
+            }  else if group == "priceList" && priceList.count != 0 {
+                for id in priceList {
+                    queryList.append(URLQueryItem(name: String(group!), value: String(id)))
+                }
+            }
+            return queryList
         }
     }
     

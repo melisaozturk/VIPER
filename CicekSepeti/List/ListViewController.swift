@@ -31,7 +31,7 @@ class ListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 //        NotificationCenter.default.addObserver(self, selector: #selector(getNotification(_:)), name: Notification.Name("filteredProduct"), object: nil)
-//        self.tableView.reloadData()
+        self.tableView.reloadData()
 //        TODO: table scroll top
 //        self.tableView.scrollsToTop = true
 //        if filtered == nil {

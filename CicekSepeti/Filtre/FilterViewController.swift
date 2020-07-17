@@ -16,6 +16,10 @@ class FilterViewController: UIViewController {
     var filters = [DynamicFilter]()
     var filteredProduct = [Product]()
     
+    var checkList = [Int]()
+    var detailList = [Int]()
+    var priceList = [Int]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +39,7 @@ class FilterViewController: UIViewController {
         self.tableView.tableFooterView = UIView()
         self.tableView.separatorStyle = .none
         self.tableView.isUserInteractionEnabled = true
+        self.tableView.allowsMultipleSelection = true
         self.tableView.register(UINib(nibName: "FilterCell", bundle: nil), forCellReuseIdentifier: "FilterCell")
     }
     
@@ -57,7 +62,6 @@ extension FilterViewController: FilterPresenterToViewProtocol{
             }
         }
         self.presenter?.showListController(navigationController: navigationController!, data: self.filteredProduct)
-//        self.tableView.reloadData()
     }
     
     func showError() {
@@ -87,14 +91,14 @@ extension FilterViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FilterCell", for: indexPath) as! FilterCell
-        cell.isUserInteractionEnabled = true
-
+        cell.selectionStyle = .gray
         if !self.filters.isEmpty {
             let values = self.filters[indexPath.section].valuesObject!
                 if let name = values[indexPath.row].name {
                     cell.btnFilter.setTitle(name, for: .normal)
             }
         }
+        
         return cell
     }
     
@@ -117,8 +121,20 @@ extension FilterViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let id = self.filters[indexPath.section].valuesObject![indexPath.row].id {
-            UserDefaults.standard.set(id, forKey: "id")
+        if let group = self.filters[indexPath.section].valuesObject![indexPath.row].group, let id = self.filters[indexPath.section].valuesObject![indexPath.row].id {
+            if group == 1 {
+                UserDefaults.standard.set("detailList", forKey: "group")
+                detailList.append(id)
+                UserDefaults.standard.set(detailList, forKey: "detailList")
+            } else if group == 2 {
+                UserDefaults.standard.set("checkList", forKey: "group")
+                checkList.append(id)
+                UserDefaults.standard.set(checkList, forKey: "checkList")
+            } else if group == 3 {
+                UserDefaults.standard.set("priceList", forKey: "group")
+                priceList.append(id)
+                UserDefaults.standard.set(priceList, forKey: "priceList")
+            }
         }
     }
 }

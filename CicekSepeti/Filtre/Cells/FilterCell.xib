@@ -28,7 +28,7 @@
                         </state>
                     </button>
                 </subviews>
-                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="JxM-LO-TQz" secondAttribute="bottom" constant="10" id="0xw-Ay-ZIv"/>
                     <constraint firstAttribute="trailingMargin" secondItem="JxM-LO-TQz" secondAttribute="trailing" constant="10" id="IUs-9e-jbb"/>

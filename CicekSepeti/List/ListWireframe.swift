@@ -30,7 +30,7 @@ class ListWireframe: PresenterToWireframeProtocol {
         interactor.presenter = presenter
         
         if let data = data {
-            listVC.filteredProducts = data as! [Product]
+            listVC.products = data as! [Product]
         }
         
         return listVC
