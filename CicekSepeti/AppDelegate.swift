@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         /* Create ui-view-controller instance*/
-//        let list = ListWireframe.createListModule(data: nil)
         let splash = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
 //        /* Initiating instance of ui-navigation-controller with view-controller */
         let navigationController = UINavigationController()

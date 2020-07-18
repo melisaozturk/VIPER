@@ -214,7 +214,6 @@
 		1E9C888724BD115000647083 /* CicekSepeti */ = {
 			isa = PBXGroup;
 			children = (
-				1E9C88CB24BD12A400647083 /* Endpoints.swift */,
 				1E93CBA724BE36E100A5C3BF /* Filtre */,
 				1E9C88BF24BD120600647083 /* List */,
 				1EF1E90F24BE2BD4007E7273 /* Common */,
@@ -306,6 +305,7 @@
 		1EF1E90F24BE2BD4007E7273 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1E9C88CB24BD12A400647083 /* Endpoints.swift */,
 				1E93CBB824BF18AB00A5C3BF /* Header */,
 				1EF1E91324BE3121007E7273 /* Loading */,
 				1EF1E91024BE2BDC007E7273 /* Splash */,
