@@ -24,7 +24,6 @@
 		1E9C88A024BD115200647083 /* CicekSepetiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9C889F24BD115200647083 /* CicekSepetiTests.swift */; };
 		1E9C88AB24BD115200647083 /* CicekSepetiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9C88AA24BD115200647083 /* CicekSepetiUITests.swift */; };
 		1E9C88BA24BD119A00647083 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9C88B924BD119A00647083 /* ApiClient.swift */; };
-		1E9C88BC24BD11A400647083 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9C88BB24BD11A400647083 /* Result.swift */; };
 		1E9C88BE24BD11DC00647083 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9C88BD24BD11DC00647083 /* Endpoint.swift */; };
 		1E9C88C124BD122100647083 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9C88C024BD122100647083 /* ListViewController.swift */; };
 		1E9C88C324BD124900647083 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9C88C224BD124900647083 /* Protocols.swift */; };
@@ -85,7 +84,6 @@
 		1E9C88AA24BD115200647083 /* CicekSepetiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CicekSepetiUITests.swift; sourceTree = "<group>"; };
 		1E9C88AC24BD115200647083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E9C88B924BD119A00647083 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
-		1E9C88BB24BD11A400647083 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		1E9C88BD24BD11DC00647083 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		1E9C88C024BD122100647083 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		1E9C88C224BD124900647083 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				1E9C88B924BD119A00647083 /* ApiClient.swift */,
-				1E9C88BB24BD11A400647083 /* Result.swift */,
 				1E9C88BD24BD11DC00647083 /* Endpoint.swift */,
 			);
 			path = Api;
@@ -587,7 +584,6 @@
 				1E9C88CC24BD12A400647083 /* Endpoints.swift in Sources */,
 				1E93CBBC24BF18C600A5C3BF /* Header.swift in Sources */,
 				1E9C88C124BD122100647083 /* ListViewController.swift in Sources */,
-				1E9C88BC24BD11A400647083 /* Result.swift in Sources */,
 				1E9C88BA24BD119A00647083 /* ApiClient.swift in Sources */,
 				1E9C88CE24BD12B000647083 /* ListPresenter.swift in Sources */,
 				1E9C88BE24BD11DC00647083 /* Endpoint.swift in Sources */,
